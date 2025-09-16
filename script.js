@@ -30,6 +30,15 @@ const QUESTIONS = [
   }
 ];
 
+// --- 豆知識 ---
+const TIPS = [
+  "ワイルズの証明は楕円曲線と谷山–志村予想を利用している。",
+  "証明は1993年に発表されたが、誤りが見つかり1994年に修正され完成した。",
+  "この定理は350年以上にわたり数多くの数学者を悩ませた。",
+  "フェルマーの書き残した証明は現在も謎のまま。",
+  "この定理は『数学界最大の難問』のひとつと呼ばれていた。"
+];
+
 let idx = 0, score = 0, selected = null;
 const total = QUESTIONS.length;
 const qText = document.getElementById('q-text');
@@ -64,7 +73,7 @@ function choose(i,el){
   selected = i;
 }
 function updateProgress(){
-  bar.style.width = Math.round((idx/total)*100) + '%';
+  bar.style.width = Math.round(((idx+1)/total)*100) + '%'; // 修正済み
   qcount.textContent = `${idx+1} / ${total}`;
 }
 nextBtn.addEventListener('click', ()=>{
@@ -86,6 +95,11 @@ function finish(){
   quizArea.style.display = 'none';
   resultEl.classList.add('show');
   scoreEl.textContent = `${score} / ${total}`;
+
+  if(score === total){
+    const randomTip = TIPS[Math.floor(Math.random()*TIPS.length)];
+    detailEl.innerHTML = `🎉 全問正解！おめでとう！<br><br>【フェルマーの最終定理の豆知識】<br>${randomTip}`;
+  }
 }
 retryBtn.addEventListener('click', ()=>{
   idx=0; score=0; selected=null;
