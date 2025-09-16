@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>フェルマーの最終定理クイズ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card" role="main">
+      <header>
+        <div class="logo">FQ</div>
+        <div>
+          <h1>フェルマーの最終定理 — 4択クイズ</h1>
+          <p class="lead">数学史の名命題についての短いクイズ。全問回答して結果を確認しよう。</p>
+        </div>
+      </header>
+
+      <div class="progress"><i id="bar"></i></div>
+
+      <div id="quiz-area">
+        <div class="question" id="q-text">読み込み中...</div>
+        <div class="choices" id="choices"></div>
+
+        <div class="meta">
+          <div class="left">
+            <button id="nextBtn" class="btn">次へ</button>
+            <button id="skipBtn" class="btn ghost">スキップ</button>
+          </div>
+          <div class="right small" id="qcount">0 / 0</div>
+        </div>
+      </div>
+
+      <div id="result" class="result">
+        <div class="score" id="score"></div>
+        <div class="small" id="detail"></div>
+        <div style="margin-top:12px">
+          <button id="retryBtn" class="btn">もう一度</button>
+          <button id="shareBtn" class="btn ghost">結果をコピー</button>
+        </div>
+      </div>
+
+      <footer>
+        <div class="hint">※このクイズは学習用途の簡易クイズです。解説は各問題の正解後に表示されます。</div>
+        <div class="small">Made for GitHub Pages</div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
